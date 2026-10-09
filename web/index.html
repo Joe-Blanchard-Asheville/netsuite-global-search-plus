@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NetSuite Global Search+</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <aside class="rail">
+      <a class="brand" href="./" aria-label="Home">⌕</a>
+      <div class="rail-label">NETSUITE TOOLS</div>
+      <p style="padding: 1rem">NetSuite Global Search+</p>
+      <div class="rail-bottom">
+        <span class="status-dot"></span> Development preview<small
+          >Joe Blanchard</small
+        >
+      </div>
+    </aside>
+    <main>
+      <header>
+        <div class="breadcrumb">NETSUITE GLOBAL SEARCH+</div>
+        <div class="environment" id="environment">Connecting…</div>
+      </header>
+      <div id="notice" role="status" aria-live="polite"></div>
+      <section id="search-view" class="view">
+        <div class="intro">
+          <div>
+            <div class="eyebrow">01 / DISCOVER</div>
+            <h1>Search by record type</h1>
+            <p>Choose the records. Find the match. Follow the evidence.</p>
+          </div>
+          <div class="intro-note">
+            <span class="mini-orbit">⌕</span
+            ><strong>One search, your scope.</strong
+            ><span>Exact types · clear matches · connected records</span>
+          </div>
+        </div>
+        <div class="workspace search-workspace">
+          <form id="search-form" class="filters">
+            <div class="panel-heading">
+              <h2>Search scope</h2>
+              <span class="badge">YOU CONTROL</span>
+            </div>
+            <label for="query">Search records</label>
+            <div class="input-icon">
+              <span>⌕</span
+              ><input
+                id="query"
+                placeholder="Name, number or memo"
+                value="Cedar"
+              />
+            </div>
+            <fieldset>
+              <legend>Record types</legend>
+              <div id="type-options"></div>
+            </fieldset>
+            <fieldset>
+              <legend>Search in</legend>
+              <div id="field-options" class="inline-checks"></div>
+            </fieldset>
+            <div class="filter-pair">
+              <label
+                >Match<select id="match">
+                  <option value="contains">Contains</option>
+                  <option value="exact">Exact</option>
+                </select></label
+              ><label
+                >Status<select id="status">
+                  <option value="any">Any</option>
+                  <option value="open" selected>Open</option>
+                  <option value="closed">Closed</option>
+                </select></label
+              >
+            </div>
+            <label class="check"
+              ><input type="checkbox" id="overdue" checked />Overdue receipts
+              only</label
+            ><label class="check"
+              ><input type="checkbox" id="inactive" />Include inactive
+              entities</label
+            >
+            <button type="submit" class="primary full">
+              Find records <span>↗</span>
+            </button>
+            <div class="presets">
+              <label for="preset-name">Personal presets</label
+              ><input
+                id="preset-name"
+                placeholder="Name this search"
+                maxlength="60"
+              /><button type="button" id="save-preset" class="secondary full">
+                Save current scope
+              </button>
+              <div class="preset-row">
+                <select id="presets" aria-label="Saved presets">
+                  <option value="">Load a preset…</option></select
+                ><button
+                  type="button"
+                  id="delete-preset"
+                  class="icon-button"
+                  aria-label="Delete selected preset"
+                >
+                  ×
+                </button>
+              </div>
+              <small
+                >Preset names and search text stay in this browser. Do not save
+                sensitive terms on shared devices.</small
+              >
+            </div>
+          </form>
+          <div class="results panel">
+            <div class="panel-heading">
+              <div>
+                <h2>Matching records</h2>
+                <span id="result-count" class="muted">Loading…</span>
+              </div>
+              <span class="live-label"
+                ><span class="status-dot"></span
+                ><span id="data-label">FICTIONAL DATA</span></span
+              >
+            </div>
+            <div id="search-warnings"></div>
+            <div id="results"></div>
+            <div class="pagination">
+              <button id="prev" class="secondary">← Previous</button
+              ><span id="page-label"></span
+              ><button id="next" class="secondary">Next →</button>
+            </div>
+          </div>
+          <aside class="preview panel" id="preview">
+            <div class="empty-icon">↗</div>
+            <h2>A closer look</h2>
+            <p>Select a record to see its details and next steps.</p>
+          </aside>
+        </div>
+      </section>
+      <footer>
+        <span>NetSuite Global Search+</span
+        ><span id="footer-mode"
+          >Fictional demo data. NetSuite sandbox validation pending.</span
+        >
+      </footer>
+    </main>
+    <script src="/app.js" defer></script>
+  </body>
+</html>
